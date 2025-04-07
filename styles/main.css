@@ -5,7 +5,7 @@
     --accent: #F5965F;
 
     --background: #F2F1F6;
-    --body-bg: #F8F8F8;
+    --body-bg: #e7e6e6;
     --display-bg: #FFF;
 
     --text: #262626;
@@ -17,7 +17,7 @@
     --accent: #F5965F;
 
     --background: #1E1C28;
-    --body-bg: #1E1C28;
+    --body-bg: #353243;
     --display-bg: #262837;
 
     --text: #FFF;
@@ -65,6 +65,7 @@ body {
     align-items: center;
     width: 100%;
     font-size: 0.8rem;
+    color: var(--text);
 }
 
 .calc-display-status .icons {
@@ -91,15 +92,33 @@ body {
     color: var(--text);
 }
 
+#themeToggle i.ri-sun-fill {
+    display: none;
+}
+
+#themeToggle i.ri-moon-fill {
+    display: block;
+}
+
+.dark #themeToggle i.ri-sun-fill {
+    display: block;
+}
+
+.dark #themeToggle i.ri-moon-fill {
+    display: none;
+}
+
 .calc-display-history {
     font-size: 1rem;
     color: var(--text);
     opacity: 0.5;
+    height: 0.4rem;
 }
 
 .calc-display-value {
     font-size: 2rem;
     color: var(--text);
+    height: 2rem;
 }
 
 .calc-body {
@@ -130,6 +149,7 @@ body {
     width: 3rem;
     height: 1rem;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .calc-button-grid {
@@ -153,6 +173,7 @@ body {
     background-color: var(--primary);
     color: var(--secondary);
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .calc-button-grid .calc-button.accent {
