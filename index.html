@@ -4,10 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanilla JS Calculator</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    
+    <div class="calc-container">
+        <div class="calc-display">
+            <div class="calc-display-controls">
+                <button class="calc-display-control">
+                    <i class="ri-moon-fill"></i>
+                </button>
+            </div>
+            <div class="calc-display-history">1900+84</div>
+            <div class="calc-display-value">1984</div>
+        </div>
+        <div class="calc-body">
+            <div class="calc-special-buttons">
+                <button class="calc-button">
+                    <i class="ri-square-root"></i>
+                </button>
+                <button class="calc-button">&Pi;</button>
+                <button class="calc-button">
+                    <i class="ri-formula"></i>
+                </button>
+                <button class="calc-button">
+                    <i class="ri-infinity-line"></i>
+                </button>
+            </div>
+            <div class="calc-button-grid">
+                <button class="calc-button accent">AC</button>
+                <button class="calc-button operator">()</button>
+                <button class="calc-button operator">%</button>
+                <button class="calc-button operator">
+                    <i class="ri-divide-line"></i>
+                </button>
+                <button class="calc-button">7</button>
+                <button class="calc-button">8</button>
+                <button class="calc-button">9</button>
+                <button class="calc-button operator">X</button>
+                <button class="calc-button">4</button>
+                <button class="calc-button">5</button>
+                <button class="calc-button">6</button>
+                <button class="calc-button operator">
+                    <i class="ri-subtract-line"></i>
+                </button>
+                <button class="calc-button">1</button>
+                <button class="calc-button">2</button>
+                <button class="calc-button">3</button>
+                <button class="calc-button operator">
+                    <i class="ri-add-line"></i>
+                </button>
+                <button class="calc-button">0</button>
+                <button class="calc-button">.</button>
+                <button class="calc-button">
+                    <i class="ri-delete-back-2-line"></i>
+                </button>
+                <button class="calc-button accent">
+                    <i class="ri-equal-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="/scripts/main.js"></script>
 </body>
 </html>
