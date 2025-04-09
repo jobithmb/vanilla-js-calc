@@ -185,3 +185,7 @@ body {
     background-color: var(--secondary);
     color: var(--primary);
 }
+
+.dark .calc-button {
+    color: var(--text) !important;
+}

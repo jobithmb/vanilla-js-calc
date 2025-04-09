@@ -19,76 +19,101 @@ themeToggle.addEventListener('click', () => {
 const calcValue = document.getElementById('calcValue');
 const calcHistory = document.getElementById('calcHistory');
 
-// Calculator Button handler
-function buttonClickHandler(cmd) {
+// keyboard event handler
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    console.log('KeyDown - ', key);
+    inputHandler(key)
+});
 
+
+function inputHandler (input) {
     // get current value of the history and value
     const currHistory = calcHistory.innerText;
     const currValue = calcValue.innerText;
 
-    switch (cmd) {
+    switch (input) {
         // special buttons
+        case 'Escape':
         case 'AC':
             calcValue.innerText = '';
             calcHistory.innerText = '';
             break;
         case 'para':
+            // TODO: WIP
             break;
-        case 'equal':
+            case 'Enter':
+            case '=':
+            case 'equal':
+            // evaluate the expression and print the answer
+            const answer = eval(currValue);         // calculating
+            calcValue.innerText = answer;           // displaying
+            calcHistory.innerText = currValue;      // update history
             break;
+        case '.':
         case 'decimal':
             calcValue.innerText = currValue + '.';
             break;
+        case 'Backspace':
         case 'clear':
             // remove last character
             calcValue.innerText = currValue.slice(0, -1);
             break;
+
         // operators
+        case '%':
         case 'percent':
             calcValue.innerText = currValue + '%';
             break;
+        case '/':
         case 'divide':
             calcValue.innerText = currValue + '/';
             break;
+        case '*':
+        case 'x':
+        case 'X':
         case 'multiply':
-            calcValue.innerText = currValue + 'x';
+            calcValue.innerText = currValue + '*';
             break;
+        case '-':
         case 'subtract':
             calcValue.innerText = currValue + '-';
             break;
+        case '+':
         case 'add':
             calcValue.innerText = currValue + '+';
             break;
+
         // numbers    
-        case 'num7':
+        case '7':
             calcValue.innerText = currValue + '7';
             break;
-        case 'num8':
+        case '8':
             calcValue.innerText = currValue + '8';
             break;
-        case 'num9':
+        case '9':
             calcValue.innerText = currValue + '9';
             break;
-        case 'num4':
+        case '4':
             calcValue.innerText = currValue + '4';
             break;
-        case 'num5':
+        case '5':
             calcValue.innerText = currValue + '5';
             break;
-        case 'num6':
+        case '6':
             calcValue.innerText = currValue + '6';
             break;
-        case 'num1':
+        case '1':
             calcValue.innerText = currValue + '1';
             break;
-        case 'num2':
+        case '2':
             calcValue.innerText = currValue + '2';
             break;
-        case 'num3':
+        case '3':
             calcValue.innerText = currValue + '3';
             break;
-        case 'num0':
+        case '0':
             calcValue.innerText = currValue + '0';
-            break;
-    } 
+            break;  
+    }
 }
