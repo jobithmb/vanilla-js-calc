@@ -9,6 +9,8 @@
     --display-bg: #FFF;
 
     --text: #262626;
+
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 .dark:root {
@@ -21,6 +23,8 @@
     --display-bg: #262837;
 
     --text: #FFF;
+
+    --shadow: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -45,7 +49,7 @@ body {
     max-width: 400px;
     background-color: var(--background);
     border-radius: 1rem;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.4rem var(--shadow);
 }
 
 .calc-display {
@@ -128,6 +132,33 @@ body {
     gap: 1rem;
 }
 
+.dark .calc-button {
+    color: var(--text) !important;
+}
+
+.calc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+
+    font-weight: bold;
+    font-size: 1rem;
+
+    box-shadow: 0px 1px 2px var(--shadow);
+}
+
+.calc-button.active,
+.calc-button:active {
+    border: solid 1px var(--shadow);
+    background-color: var(--body-bg);
+    box-shadow: inset 0px 0px 5px var(--shadow);
+}
+
 .calc-special-buttons {
     display: flex;
     justify-content: space-between;
@@ -136,20 +167,12 @@ body {
 }
 
 .calc-special-buttons .calc-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 1rem;
+    width: 3rem;
 
     color: var(--secondary);
-
-    width: 3rem;
-    height: 1rem;
-    font-weight: bold;
-    font-size: 1rem;
+    background-color: var(--background);
+    box-shadow: none;
 }
 
 .calc-button-grid {
@@ -162,18 +185,8 @@ body {
     height: 3rem;
     width: 3rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 0.5rem;
-    cursor: pointer;
-    border: none;
-
-    background-color: var(--primary);
     color: var(--secondary);
-    font-weight: bold;
-    font-size: 1rem;
+    background-color: var(--primary);
 }
 
 .calc-button-grid .calc-button.accent {
@@ -186,6 +199,3 @@ body {
     color: var(--primary);
 }
 
-.dark .calc-button {
-    color: var(--text) !important;
-}

@@ -44,34 +44,34 @@
                 </button>
             </div>
             <div class="calc-button-grid">
-                <button class="calc-button accent" onclick="inputHandler('AC')">AC</button>
+                <button class="calc-button accent" data-key="Escape" onclick="inputHandler('AC')">AC</button>
                 <button class="calc-button operator" onclick="inputHandler('para')">()</button>
                 <button class="calc-button operator" onclick="inputHandler('percent')">%</button>
-                <button class="calc-button operator" onclick="inputHandler('divide')">
+                <button class="calc-button operator" data-key="/" onclick="inputHandler('divide')">
                     <i class="ri-divide-line"></i>
                 </button>
-                <button class="calc-button" onclick="inputHandler('7')">7</button>
-                <button class="calc-button" onclick="inputHandler('8')">8</button>
-                <button class="calc-button" onclick="inputHandler('9')">9</button>
-                <button class="calc-button operator" onclick="inputHandler('multiply')">X</button>
-                <button class="calc-button" onclick="inputHandler('4')">4</button>
-                <button class="calc-button" onclick="inputHandler('5')">5</button>
-                <button class="calc-button" onclick="inputHandler('6')">6</button>
-                <button class="calc-button operator" onclick="inputHandler('subtract')">
+                <button class="calc-button" data-key="7" onclick="inputHandler('7')">7</button>
+                <button class="calc-button" data-key="8" onclick="inputHandler('8')">8</button>
+                <button class="calc-button" data-key="9"  onclick="inputHandler('9')">9</button>
+                <button class="calc-button operator"  data-key="x" onclick="inputHandler('multiply')">X</button>
+                <button class="calc-button" data-key="4" onclick="inputHandler('4')">4</button>
+                <button class="calc-button" data-key="5" onclick="inputHandler('5')">5</button>
+                <button class="calc-button" data-key="6" onclick="inputHandler('6')">6</button>
+                <button class="calc-button operator" data-key="-" onclick="inputHandler('subtract')">
                     <i class="ri-subtract-line"></i>
                 </button>
-                <button class="calc-button" onclick="inputHandler('1')">1</button>
-                <button class="calc-button" onclick="inputHandler('2')">2</button>
-                <button class="calc-button" onclick="inputHandler('3')">3</button>
-                <button class="calc-button operator" onclick="inputHandler('add')">
+                <button class="calc-button" data-key="1" onclick="inputHandler('1')">1</button>
+                <button class="calc-button" data-key="2" onclick="inputHandler('2')">2</button>
+                <button class="calc-button" data-key="3" onclick="inputHandler('3')">3</button>
+                <button class="calc-button operator" data-key="+" onclick="inputHandler('add')">
                     <i class="ri-add-line"></i>
                 </button>
-                <button class="calc-button" onclick="inputHandler('0')">0</button>
-                <button class="calc-button" onclick="inputHandler('decimal')">.</button>
-                <button class="calc-button" onclick="inputHandler('clear')">
+                <button class="calc-button" data-key="0" onclick="inputHandler('0')">0</button>
+                <button class="calc-button" data-key="." onclick="inputHandler('decimal')">.</button>
+                <button class="calc-button" data-key="Backspace" onclick="inputHandler('clear')">
                     <i class="ri-delete-back-2-line"></i>
                 </button>
-                <button class="calc-button accent" onclick="inputHandler('equal')">
+                <button class="calc-button accent" data-key="Enter" onclick="inputHandler('equal')">
                     <i class="ri-equal-line"></i>
                 </button>
             </div>

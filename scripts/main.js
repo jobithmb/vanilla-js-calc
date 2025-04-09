@@ -23,6 +23,14 @@ const calcHistory = document.getElementById('calcHistory');
 document.addEventListener('keydown', (event) => {
     const key = event.key;
     console.log('KeyDown - ', key);
+    document.querySelector("[data-key='" + key + "']")?.classList.add('active');
+});
+
+// keyboard event handler
+document.addEventListener('keyup', (event) => {
+    const key = event.key;
+    console.log('KeyUp - ', key);
+    document.querySelector("[data-key='" + key + "']")?.classList.remove('active');
     inputHandler(key)
 });
 
@@ -52,7 +60,21 @@ function inputHandler (input) {
             break;
         case '.':
         case 'decimal':
-            calcValue.innerText = currValue + '.';
+            // check for double decimal numbers
+            // 9.50+2.50
+            // this should be possible
+            // split the expression into operands and operators
+
+            const expression = currValue.split('.');
+            console.log(expression);
+
+
+            if (currValue.includes('.')) {
+                calcValue.innerText = currValue;
+            } else {
+                calcValue.innerText = currValue + '.';
+            }
+            // calcValue.innerText = currValue + '.';
             break;
         case 'Backspace':
         case 'clear':
@@ -113,7 +135,9 @@ function inputHandler (input) {
             calcValue.innerText = currValue + '3';
             break;
         case '0':
-            calcValue.innerText = currValue + '0';
+            if (currValue !== '') {
+                calcValue.innerText = currValue + '0';
+            }
             break;  
     }
 }
