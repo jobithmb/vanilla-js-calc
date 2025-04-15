@@ -63,6 +63,10 @@ body {
     border-radius: 1rem;
 }
 
+.calc-display-status .branch {
+    text-transform: uppercase;
+}
+
 .calc-display-status {
     display: flex;
     justify-content: space-between;
