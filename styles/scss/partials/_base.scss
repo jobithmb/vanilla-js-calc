@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: $body-bg;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    font-size: 62.5%; // 1rem = 10px
+}
