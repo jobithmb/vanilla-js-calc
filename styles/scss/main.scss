@@ -1,11 +1,13 @@
 @use 'partials/variables' as *;
+@use 'partials/theme';
 @use 'partials/base';
+
 
 .calc-container {
     max-width: 400px;
-    background-color: $background;
+    background-color: var(--background);
     border-radius: 1rem;
-    box-shadow: 0 0.2rem 0.4rem $shadow;
+    box-shadow: 0 0.2rem 0.4rem var(--shadow);
 
     .calc-display {
         display: flex;
@@ -14,7 +16,7 @@
         align-items: flex-end;
         gap: 1rem;
         padding: 1rem;
-        background-color: $display-bg;
+        background-color: var(--display-bg);
         border-radius: 1rem;
 
         &-status {
@@ -23,7 +25,7 @@
             align-items: center;
             width: 100%;
             font-size: 0.8rem;
-            color: $text;
+            color: var(--text);
 
             .branch {
                 text-transform: uppercase;
@@ -32,50 +34,45 @@
             .icons {
                 display: flex;
                 gap: 0.2rem;
-            }
-
-            .calc-display-controls {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 1rem;
-
-                .calc-display-control {
-                    border: none;
-                    background-color: transparent;
-                    cursor: pointer;
-                    height: 1rem;
-                    width: 1rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: $text;
-                }
-            }  
+            } 
         }
 
-        &-control {
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-            height: 1rem;
-            width: 1rem;
+        &-controls {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
-            color: $text;
+            gap: 1rem;
+
+            .calc-display-control {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                height: 1rem;
+                width: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--text);
+
+                &#themeToggle { 
+                    i {
+                        &.ri-sun-fill { display: none; }
+                        &.ri-moon-fill { display: block; }
+                    }
+                }
+            }
         }
 
         &-history {
             font-size: 1rem;
-            color: $text;
+            color: var(--text);
             opacity: 0.5;
             height: 0.4rem;
         }
         
         &-value {
             font-size: 2rem;
-            color: $text;
+            color: var(--text);
             height: 2rem;
         }
     }
@@ -99,13 +96,13 @@
             font-weight: bold;
             font-size: 1rem;
         
-            box-shadow: 0px 1px 2px $shadow;
+            box-shadow: 0px 1px 2px var(--shadow);
 
             &.active,
             &:active {
-                border: solid 1px $shadow;
-                background-color: $body-bg;
-                box-shadow: inset 0px 0px 5px $shadow;
+                border: solid 1px var(--shadow);
+                background-color: var(--body-bg);
+                box-shadow: inset 0px 0px 5px var(--shadow);
             }
         }
 
@@ -119,8 +116,8 @@
                 height: 1rem;
                 width: 3rem;
             
-                color: $secondary;
-                background-color: $background;
+                color: var(--secondary);
+                background-color: var(--background);
                 box-shadow: none;
             }
         }
@@ -134,17 +131,34 @@
                 height: 3rem;
                 width: 3rem;
             
-                color: $secondary;
-                background-color: $primary;
+                color: var(--secondary);
+                background-color: var(--primary);
 
                 &.accent {
-                    background-color: $accent;
-                    color: $primary;
+                    background-color: var(--accent);
+                    color: var(--primary);
                 }
 
                 &.operator {
-                    background-color: $secondary;
-                    color: $primary;
+                    background-color: var(--secondary);
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    .calc-container {
+        .calc-display {
+            &-controls {
+                .calc-display-control {
+                    &#themeToggle { 
+                        i {
+                            &.ri-sun-fill { display: block; }
+                            &.ri-moon-fill { display: none; }
+                        }
+                    }
                 }
             }
         }

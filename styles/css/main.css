@@ -1,12 +1,36 @@
+:root {
+  --primary: #FFF;
+  --secondary: #525298;
+  --accent: #F5965F;
+  --background: #F2F1F6;
+  --body-bg: #e7e6e6;
+  --display-bg: #FFF;
+  --text: #262626;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --font: Roboto, sans-serif;
+}
+
+.dark:root {
+  --primary: #262837;
+  --secondary: #525298;
+  --accent: #F5965F;
+  --background: #1E1C28;
+  --body-bg: #353243;
+  --display-bg: #262837;
+  --text: #FFF;
+  --shadow: rgba(255, 255, 255, 0.1);
+  --font: Roboto, sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #e7e6e6;
+  background: var(--body-bg);
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,9 +40,9 @@ body {
 
 .calc-container {
   max-width: 400px;
-  background-color: #F2F1F6;
+  background-color: var(--background);
   border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2rem 0.4rem var(--shadow);
 }
 .calc-container .calc-display {
   display: flex;
@@ -27,7 +51,7 @@ body {
   align-items: flex-end;
   gap: 1rem;
   padding: 1rem;
-  background-color: #FFF;
+  background-color: var(--display-bg);
   border-radius: 1rem;
 }
 .calc-container .calc-display-status {
@@ -36,7 +60,7 @@ body {
   align-items: center;
   width: 100%;
   font-size: 0.8rem;
-  color: #262626;
+  color: var(--text);
 }
 .calc-container .calc-display-status .branch {
   text-transform: uppercase;
@@ -45,13 +69,13 @@ body {
   display: flex;
   gap: 0.2rem;
 }
-.calc-container .calc-display-status .calc-display-controls {
+.calc-container .calc-display-controls {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
 }
-.calc-container .calc-display-status .calc-display-controls .calc-display-control {
+.calc-container .calc-display-controls .calc-display-control {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -60,28 +84,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #262626;
+  color: var(--text);
 }
-.calc-container .calc-display-control {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  height: 1rem;
-  width: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #262626;
+.calc-container .calc-display-controls .calc-display-control#themeToggle i.ri-sun-fill {
+  display: none;
+}
+.calc-container .calc-display-controls .calc-display-control#themeToggle i.ri-moon-fill {
+  display: block;
 }
 .calc-container .calc-display-history {
   font-size: 1rem;
-  color: #262626;
+  color: var(--text);
   opacity: 0.5;
   height: 0.4rem;
 }
 .calc-container .calc-display-value {
   font-size: 2rem;
-  color: #262626;
+  color: var(--text);
   height: 2rem;
 }
 .calc-container .calc-body {
@@ -100,12 +119,12 @@ body {
   background-color: transparent;
   font-weight: bold;
   font-size: 1rem;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 2px var(--shadow);
 }
 .calc-container .calc-body .calc-button.active, .calc-container .calc-body .calc-button:active {
-  border: solid 1px rgba(0, 0, 0, 0.1);
-  background-color: #e7e6e6;
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border: solid 1px var(--shadow);
+  background-color: var(--body-bg);
+  box-shadow: inset 0px 0px 5px var(--shadow);
 }
 .calc-container .calc-body .calc-special-buttons {
   display: flex;
@@ -116,8 +135,8 @@ body {
 .calc-container .calc-body .calc-special-buttons .calc-button {
   height: 1rem;
   width: 3rem;
-  color: #525298;
-  background-color: #F2F1F6;
+  color: var(--secondary);
+  background-color: var(--background);
   box-shadow: none;
 }
 .calc-container .calc-body .calc-button-grid {
@@ -128,16 +147,23 @@ body {
 .calc-container .calc-body .calc-button-grid .calc-button {
   height: 3rem;
   width: 3rem;
-  color: #525298;
-  background-color: #FFF;
+  color: var(--secondary);
+  background-color: var(--primary);
 }
 .calc-container .calc-body .calc-button-grid .calc-button.accent {
-  background-color: #F5965F;
-  color: #FFF;
+  background-color: var(--accent);
+  color: var(--primary);
 }
 .calc-container .calc-body .calc-button-grid .calc-button.operator {
-  background-color: #525298;
-  color: #FFF;
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.dark .calc-container .calc-display-controls .calc-display-control#themeToggle i.ri-sun-fill {
+  display: block;
+}
+.dark .calc-container .calc-display-controls .calc-display-control#themeToggle i.ri-moon-fill {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

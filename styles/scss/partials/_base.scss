@@ -1,14 +1,15 @@
 @use 'variables' as *;
+@use 'theme';
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: $body-bg;
+    background: var(--body-bg);
     margin: 0;
     padding: 0;
-    font-family: $font;
+    font-family: var(--font);
 
     display: flex;
     justify-content: center;

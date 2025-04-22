@@ -1,0 +1,33 @@
+@use 'variables' as *;
+
+:root {
+    --primary: #{$primary};
+    --secondary: #{$secondary};
+    --accent: #{$accent};
+
+    --background: #{$background};
+    --body-bg: #{$body-bg};
+    --display-bg: #{$display-bg};
+
+    --text: #{$text};
+
+    --shadow: #{$shadow};
+
+    --font: #{$font};
+}
+
+.dark:root {
+    --primary: #{$primary-dark};
+    --secondary: #{$secondary-dark};
+    --accent: #{$accent-dark};
+
+    --background: #{$background-dark};
+    --body-bg: #{$body-bg-dark};
+    --display-bg: #{$display-bg-dark};
+
+    --text: #{$text-dark};
+
+    --shadow: #{$shadow-dark};
+
+    --font: #{$font};
+}
